@@ -112,6 +112,17 @@
       border:1px solid var(--cr3);
       opacity:.8;
     }
+    .hero-photo{
+      position:absolute;right:48px;bottom:0;
+      width:min(42%,480px);
+      z-index:2;
+      opacity:0;animation:fu 1s var(--ease) .6s forwards;
+      filter:drop-shadow(0 8px 32px rgba(0,0,0,0.12));
+    }
+    .hero-photo img{
+      width:100%;height:auto;display:block;
+      border-radius:12px 12px 0 0;
+    }
     .hi{position:relative;max-width:1100px;margin:0 auto;width:100%}
 
     .heb{display:flex;align-items:center;gap:14px;margin-bottom:28px;opacity:0;animation:fu .7s var(--ease) .2s forwards}
@@ -391,6 +402,7 @@
       header{padding:0 20px}nav{display:none}
       section{padding:70px 20px}#hero{padding:110px 20px 60px}
       .hcircle,.hcircle2{display:none}
+      .hero-photo{position:relative;right:auto;bottom:auto;width:80%;max-width:360px;margin:32px auto 0;}
       .sf{grid-template-columns:1fr}
       .stl{grid-template-columns:1fr;gap:40px}
       .owl{grid-template-columns:1fr;gap:40px}
@@ -433,6 +445,7 @@
   <div class="hgrid"></div>
   <div class="hcircle"></div>
   <div class="hcircle2"></div>
+  <div class="hero-photo"><img src="images/hero.png" alt="FUKUOKA CONNECT 後藤" width="960" height="1200" loading="eager"></div>
   <div class="hi">
     <div class="heb"><div class="hebl"></div><span>AI-POWERED LP PRODUCTION</span></div>
     <h1>あな<span class="sm">た</span>のビジネス<span class="sm">を、</span></h1>
