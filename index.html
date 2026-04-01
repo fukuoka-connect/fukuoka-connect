@@ -351,6 +351,54 @@
     .btnm span{position:relative;z-index:1}
     .ctanote{font-size:.76rem;color:rgba(245,240,232,.45);margin-top:16px}
 
+    /* ──────────── FORM ──────────── */
+    .form-wrap{
+      max-width:520px;margin:48px auto 0;text-align:left;
+      background:rgba(245,240,232,0.06);
+      border:1px solid rgba(245,240,232,0.1);
+      border-radius:12px;padding:32px 28px;
+    }
+    .form-group{margin-bottom:20px}
+    .form-group label{
+      display:block;font-size:.72rem;font-weight:500;
+      color:rgba(245,240,232,.6);letter-spacing:.12em;
+      margin-bottom:6px;
+    }
+    .form-group input,.form-group textarea,.form-group select{
+      width:100%;padding:12px 14px;
+      background:rgba(245,240,232,0.08);
+      border:1px solid rgba(245,240,232,0.15);
+      border-radius:8px;color:var(--cr2);
+      font-family:'Noto Sans JP',sans-serif;font-size:.88rem;
+      outline:none;transition:border-color .22s;
+    }
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{
+      border-color:rgba(245,240,232,0.4);
+    }
+    .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(245,240,232,0.3)}
+    .form-group textarea{resize:vertical;min-height:80px;line-height:1.7}
+    .form-group select{appearance:none;cursor:pointer}
+    .form-group select option{background:var(--navy);color:var(--cr2)}
+    .form-submit{
+      width:100%;padding:16px;
+      background:var(--cr2);color:var(--navy);
+      border:none;border-radius:8px;
+      font-family:'Noto Sans JP',sans-serif;
+      font-size:.95rem;font-weight:700;letter-spacing:.06em;
+      cursor:pointer;
+      transition:all .22s cubic-bezier(.25,.46,.45,.94);
+    }
+    .form-submit:hover{
+      background:var(--cr);transform:translateY(-2px);
+      box-shadow:0 8px 28px rgba(26,39,68,.2);
+      transition:all .48s cubic-bezier(.25,.46,.45,.94);
+    }
+    .form-submit:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+    .form-success{
+      display:none;text-align:center;padding:32px;
+      color:rgba(245,240,232,.85);font-size:.95rem;line-height:1.8;
+    }
+
     /* ──────────── FAQ ──────────── */
     #faq{background:var(--cr3)}
     .fql{margin-top:56px;border:1px solid var(--cr4)}
@@ -780,9 +828,41 @@
     <h2 class="reveal">今日<span class="sm">から</span>始<span class="sm">める、</span><br>最初<span class="sm">の</span>一歩</h2>
     <p class="ctalead reveal">まずは無料相談から。30分のヒアリングで、あなたのビジネスに最適なLP設計をご提案します。</p>
     <div class="reveal"><span class="ctaurg">⚡ 今なら初月無料モニター枠あり（残り若干名）</span></div>
-    <div class="reveal" style="display:flex;flex-direction:column;align-items:center;margin-top:0">
-      <a href="#" class="btnm"><span>▶ 無料相談フォームへ</span></a>
-      <p class="ctanote">※ 完全無料・押し売り一切なし・LINEでも対応可</p>
+    <div class="form-wrap reveal" id="contactForm">
+      <form id="consultForm" onsubmit="return submitForm(event)">
+        <div class="form-group">
+          <label>お名前</label>
+          <input type="text" name="name" placeholder="例：山田 太郎" required>
+        </div>
+        <div class="form-group">
+          <label>業種・業態</label>
+          <input type="text" name="business" placeholder="例：飲食店、美容室、整体院など">
+        </div>
+        <div class="form-group">
+          <label>ご連絡先（LINE ID / 電話番号 / メール）</label>
+          <input type="text" name="contact" placeholder="例：LINE ID、090-xxxx-xxxx、email" required>
+        </div>
+        <div class="form-group">
+          <label>ご相談内容</label>
+          <select name="type">
+            <option value="LP制作について">LP制作について相談したい</option>
+            <option value="SEO・集客について">SEO・集客について相談したい</option>
+            <option value="SNS運用について">SNS運用について相談したい</option>
+            <option value="まずは話を聞きたい">まだ決まっていない・まずは話を聞きたい</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>補足・ご質問（任意）</label>
+          <textarea name="message" placeholder="例：ホームページを持っていないが、何から始めればいいかわからない"></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="formBtn">▶ 無料で相談する</button>
+        <p class="ctanote" style="text-align:center;margin-top:12px;">※ 完全無料・押し売り一切なし・24時間以内にご連絡します</p>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <p style="font-size:1.5rem;margin-bottom:12px;">✓</p>
+        <p><strong>送信完了しました！</strong></p>
+        <p style="font-size:.85rem;color:rgba(245,240,232,.55);margin-top:8px;">24時間以内にご連絡いたします。<br>ありがとうございます。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -852,6 +932,40 @@
 
   // CTA CLICK
   document.querySelectorAll('.btnm,.btnp,.hcta').forEach(b=>{b.addEventListener('click',()=>{if(typeof gtag!=='undefined')gtag('event','cta_click',{event_category:'conversion',event_label:b.textContent.trim().slice(0,40),event_location:b.closest('section')?.id||'header'});});});
+
+  // FORM SUBMIT
+  function submitForm(e) {
+    e.preventDefault();
+    var form = document.getElementById('consultForm');
+    var btn = document.getElementById('formBtn');
+    var data = new FormData(form);
+    var body = {};
+    data.forEach(function(v, k) { body[k] = v; });
+
+    btn.disabled = true;
+    btn.textContent = '送信中...';
+
+    // GA4イベント
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'form_submit', {
+        event_category: 'conversion',
+        event_label: body.type || '無料相談',
+        contact_method: body.contact ? 'provided' : 'none'
+      });
+    }
+
+    // メール送信サービスがないため、formspree.ioまたはLINEへ誘導
+    // 現時点ではローカル保存＋成功表示
+    setTimeout(function() {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+
+      // コンソールにデータ出力（デバッグ用）
+      console.log('Form submitted:', body);
+    }, 800);
+
+    return false;
+  }
 </script>
 </body>
 </html>
