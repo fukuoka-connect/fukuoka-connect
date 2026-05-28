@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>.MD ファイル作成 はじめてガイド ／ claude勉強会 御礼特典</title>
+  <meta name="description" content="claude勉強会（2026-05-28 大名CONNECT）にご参加・ご回答いただいた方への御礼特典ページ。">
+
+  <style>
+    :root {
+      --accent: #C77B3E;
+      --accent-light: #FAF3EB;
+      --accent-dark: #B85A1F;
+      --text: #2a2a2a;
+      --text-soft: #5a5a5a;
+      --text-mute: #888;
+      --bg: #fdfbf7;
+      --card: #ffffff;
+      --border: #ede6db;
+      --code-bg: #2d2826;
+      --code-text: #f5f0e8;
+      --shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.85;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header.hero {
+      padding: 56px 20px 40px;
+      text-align: center;
+      background: linear-gradient(180deg, var(--accent-light) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    h1.hero-title {
+      font-size: clamp(22px, 4.5vw, 30px);
+      font-weight: 900;
+      color: #1a1a1a;
+      line-height: 1.45;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .hero-sub {
+      color: var(--accent-dark);
+      font-size: clamp(13px, 2.5vw, 15px);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero-meta {
+      font-size: 12px;
+      color: var(--text-mute);
+      letter-spacing: 0.05em;
+    }
+
+    /* Main content */
+    main { padding: 40px 0 60px; }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 28px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 600px) {
+      section { padding: 24px 20px; }
+    }
+
+    h2 {
+      font-size: 19px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 18px;
+      padding-left: 14px;
+      border-left: 4px solid var(--accent);
+      line-height: 1.5;
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 24px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px dotted var(--accent);
+    }
+    p { margin-bottom: 14px; color: var(--text); }
+    strong { color: var(--accent-dark); font-weight: 700; }
+    ul, ol { margin: 0 0 16px 22px; }
+    li { margin-bottom: 6px; }
+    blockquote {
+      margin: 16px 0;
+      padding: 14px 18px;
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      color: var(--text-soft);
+      border-radius: 4px;
+    }
+    blockquote p:last-child { margin-bottom: 0; }
+    hr {
+      border: none;
+      border-top: 1px dashed #ddd;
+      margin: 24px 0;
+    }
+    code {
+      font-family: "SF Mono", "Menlo", "Consolas", monospace;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    /* PDF download */
+    .pdf-block {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 24px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(199, 123, 62, 0.25);
+    }
+    .pdf-block h2 {
+      color: #fff;
+      border-left: 4px solid #fff;
+      padding-left: 14px;
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+    .pdf-block p {
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+    .pdf-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--accent-dark);
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.05em;
+      transition: transform 0.15s;
+    }
+    .pdf-btn:hover { transform: translateY(-2px); }
+
+    /* Template card with copy button */
+    .tpl-card {
+      background: var(--code-bg);
+      color: var(--code-text);
+      border-radius: 10px;
+      padding: 18px;
+      margin: 14px 0 24px;
+      position: relative;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .tpl-card pre {
+      font-family: "SF Mono", "Menlo", "Consolas", monospace;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 0;
+      padding-right: 80px;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: background 0.15s;
+      font-family: inherit;
+    }
+    .copy-btn:hover { background: var(--accent-dark); }
+    .copy-btn.copied { background: #4a9d4a; }
+
+    .tpl-filename {
+      font-family: "SF Mono", "Menlo", monospace;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      padding: 6px 14px;
+      border-radius: 6px;
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, var(--accent-light) 0%, #fef9f2 100%);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .cta h2 {
+      border-left: none;
+      padding-left: 0;
+      text-align: center;
+      color: var(--accent-dark);
+      font-size: 20px;
+    }
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+    .cta-btn {
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: background 0.15s;
+    }
+    .cta-btn:hover { background: var(--accent-dark); }
+    .cta-btn.secondary { background: #fff; color: var(--accent-dark); border: 2px solid var(--accent); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px 60px;
+      color: var(--text-mute);
+      font-size: 12px;
+      border-top: 1px solid var(--border);
+      background: #faf8f3;
+    }
+    footer .quote {
+      font-size: 14px;
+      color: var(--accent-dark);
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    footer a { color: var(--accent-dark); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* TOC */
+    .toc {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      font-size: 13px;
+    }
+    .toc-title {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--accent-dark);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .toc ol {
+      margin: 0;
+      padding-left: 20px;
+      columns: 2;
+      column-gap: 20px;
+    }
+    .toc li { margin-bottom: 4px; }
+    .toc a { color: var(--text-soft); text-decoration: none; }
+    .toc a:hover { color: var(--accent-dark); }
+    @media (max-width: 500px) {
+      .toc ol { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="badge">CLAUDE 勉強会 ／ 御礼特典</div>
+      <h1 class="hero-title">.MD ファイル作成 はじめてガイド</h1>
+      <div class="hero-sub">── あなたの「なぜ」を、Claudeに渡すために</div>
+      <div class="hero-meta">2026.05.28 大名 CONNECT ／ Fukuoka connect</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <!-- はじめに -->
+      <section>
+        <h2>はじめに</h2>
+        <p>先日は、Claude勉強会にご参加くださり、本当にありがとうございました。<br>また、事後アンケートにご回答いただき、感謝しております。</p>
+        <p>このページは、勉強会の中でお話しした <strong>.MDファイル</strong> を、<strong>今夜の寝る前5分で、初めての1個を作れる</strong> ように整えた特典資料です。</p>
+        <p>勉強会でお伝えしたとおり、.MDは「あなたのなぜ」をClaudeに渡すための貯蔵庫です。完璧に書こうとせず、<strong>85点で動く</strong> スタイルで、まず1個作ってみてください。</p>
+        <blockquote>
+          <p>このガイドを読み終わったら、</p>
+          <p><strong>「私の事業で、明日1個だけ変えるとしたら何？」</strong></p>
+          <p>を、Claudeに聞いてみてもらえたら嬉しいです。</p>
+        </blockquote>
+        <p style="text-align: right; color: var(--text-mute); font-size: 13px;">── 後藤堅太郎 ／ Fukuoka connect</p>
+      </section>
+
+      <!-- PDF Download -->
+      <div class="pdf-block">
+        <h2>PDF版もご用意しています</h2>
+        <p>このページの内容を、A4縦13ページのPDFにまとめました。<br>印刷・保存・スマホで持ち歩きなど、お好きな形でどうぞ。</p>
+        <a href="bonus_md-starter-guide.pdf" class="pdf-btn" download>PDF版をダウンロード（330KB）</a>
+      </div>
+
+      <!-- TOC -->
+      <div class="toc">
+        <div class="toc-title">CONTENTS</div>
+        <ol>
+          <li><a href="#ch1">.MDって何？（30秒で）</a></li>
+          <li><a href="#ch2">3つの作り方</a></li>
+          <li><a href="#ch3">最低限の記法</a></li>
+          <li><a href="#ch4">3つのお題の.MD例</a></li>
+          <li><a href="#ch5">Claudeに渡す方法</a></li>
+          <li><a href="#ch6">FAQ</a></li>
+          <li><a href="#ch7">明日からの一歩</a></li>
+        </ol>
+      </div>
+
+      <!-- 第1章 -->
+      <section id="ch1">
+        <h2>第1章：.MDファイルって何？（30秒で）</h2>
+        <p>.MDファイル（マークダウンファイル）は、<strong>見出し・太字・箇条書きを「記号」で書ける、ふつうのテキストファイル</strong>です。</p>
+        <p>ワードや一太郎は、文字を選択して「太字ボタン」を押して装飾します。マークダウンは、文字の前後に <code>**</code> を付けるだけで太字になる。<strong>書きながら装飾ができるので、思考が止まらない</strong> のが最大の特徴です。</p>
+        <p>そして、ファイル容量がとても軽い（数KB）。メール添付も、フォルダ管理も、ストレスゼロ。Claudeに読ませる素材としては、現時点でいちばん相性がいい形式です。</p>
+      </section>
+
+      <!-- 第2章 -->
+      <section id="ch2">
+        <h2>第2章：3つの作り方（簡単な順）</h2>
+        <p><strong>まずは①から試してください</strong>。慣れたら②③に進めば十分。</p>
+
+        <h3>方法①：メモ帳・テキストエディットで作る</h3>
+        <p><strong>Macの場合</strong></p>
+        <ol>
+          <li>「Finder」→「アプリケーション」→「テキストエディット」を開く</li>
+          <li>上のメニュー「フォーマット」→「<strong>標準テキストにする</strong>」をクリック<br>※リッチテキストのままだと .md として保存できません</li>
+          <li>中身を書く（第3章で説明）</li>
+          <li>「ファイル」→「保存」</li>
+          <li>保存名を <code>company-no.md</code> と打つ（拡張子を <code>.md</code> にする）</li>
+          <li>「拡張子が違いますが…」と聞かれたら <strong>「.md を使用」を選択</strong></li>
+          <li>保存場所はデスクトップでOK</li>
+        </ol>
+
+        <p><strong>Windowsの場合</strong></p>
+        <ol>
+          <li>デスクトップで右クリック →「新規作成」→「テキスト ドキュメント」</li>
+          <li>名前を <code>company-no.md</code> に変更（<code>.txt</code> を消して <code>.md</code> にする）</li>
+          <li>「拡張子を変更すると…」と聞かれたら <strong>「はい」</strong></li>
+          <li>ダブルクリックでメモ帳が開く</li>
+          <li>中身を書いて、保存</li>
+        </ol>
+
+        <h3>方法②：Claudeに頼む（一番ラク）</h3>
+        <p>Claudeデスクトップアプリで Cowork（フォルダ共有）を有効にしている方は、こう打つだけです。</p>
+        <div class="tpl-card">
+          <button class="copy-btn" data-target="ask-claude">コピー</button>
+          <pre id="ask-claude">Desktop に "company-no.md" を作って。
+中身は「やらないこと」を3つ書く形式で、
+僕が後で埋められるようにテンプレで作っておいて。</pre>
+        </div>
+        <p>Claudeが自動でファイルを作ってくれます。<strong>手順を覚える必要すらない</strong>。これがCoworkの本領発揮するところです。</p>
+
+        <h3>方法③：VS Code や Obsidian で作る（慣れてきたら）</h3>
+        <ul>
+          <li><strong>VS Code</strong>：プログラマー御用達の無料エディタ。マークダウンのプレビュー（書いた結果が右に表示）ができる</li>
+          <li><strong>Obsidian</strong>：マークダウン専用のメモアプリ。.MDを大量に管理するなら最強</li>
+        </ul>
+        <p>慣れてからでOK。最初はこの2つは無視して大丈夫です。</p>
+      </section>
+
+      <!-- 第3章 -->
+      <section id="ch3">
+        <h2>第3章：.MDの中身、最低これだけ覚えればOK</h2>
+        <div class="tpl-card">
+          <button class="copy-btn" data-target="md-syntax">コピー</button>
+          <pre id="md-syntax"># 大見出し
+
+## 中見出し
+
+普通の文章は、ただ書くだけ。
+
+**ここは太字** ← 強調したいところ
+
+- 箇条書き
+- 箇条書き
+- 箇条書き
+
+1. 数字付きリスト
+2. 数字付きリスト
+
+> 引用したいときは、行の頭に > を付ける
+
+---
+
+(横線が引きたいときは、ハイフン3つ)</pre>
+        </div>
+        <p><strong>これで90%カバーできます。</strong>残り10%は必要になったら検索する、で十分です。</p>
+      </section>
+
+      <!-- 第4章 -->
+      <section id="ch4">
+        <h2>第4章：勉強会の3つのお題に直結する .MD例</h2>
+        <p>WORKで選んだ3つのお題、それぞれの .MD テンプレです。<strong>コピペして書き換えれば、今夜できあがります</strong>。</p>
+
+        <h3>お題1：「やらないこと」を3つだけ</h3>
+        <span class="tpl-filename">company-no.md</span>
+        <div class="tpl-card">
+          <button class="copy-btn" data-target="tpl-no">コピー</button>
+          <pre id="tpl-no"># [自分の屋号] NOリスト.md
+
+最終更新：2026-05-28
+
+---
+
+## やらない案件
+
+1.
+2.
+3.
+
+---
+
+## やらない値付け
+
+1.
+2.
+3.
+
+---
+
+## やらない発信
+
+1.
+2.
+3.</pre>
+        </div>
+
+        <h3>お題2：自分の口グセ・好きな表現・嫌いな表現</h3>
+        <span class="tpl-filename">voice.md</span>
+        <div class="tpl-card">
+          <button class="copy-btn" data-target="tpl-voice">コピー</button>
+          <pre id="tpl-voice"># [自分の名前] voice.md
+
+最終更新：2026-05-28
+
+---
+
+## 私の口グセ
+
+- 「〇〇」
+- 「〇〇」
+- 「〇〇」
+
+---
+
+## 私が好きな表現
+
+- 「〇〇」
+- 「〇〇」
+
+---
+
+## 私が嫌いな表現
+
+- 「〇〇」
+- 「〇〇」
+
+> Claudeにこれを渡せば、私の文体で書いてくれる</pre>
+        </div>
+
+        <h3>お題3：「うちは何を大事にしているか」</h3>
+        <span class="tpl-filename">company.md</span>
+        <div class="tpl-card">
+          <button class="copy-btn" data-target="tpl-company">コピー</button>
+          <pre id="tpl-company"># [自分の屋号] 会社.md
+
+最終更新：2026-05-28
+
+---
+
+## 私たちの会社について
+
+- 屋号：
+- 事業内容（一行で）：
+- 所在地：
+- 代表者：
+
+---
+
+## 私たちが大事にしていること（3つだけ）
+
+1.
+2.
+3.
+
+---
+
+## 私たちのお客様
+
+- どんな人か：
+- どんな課題を抱えているか：
+- 私たちと出会って何が変わってほしいか：
+
+---
+
+## 一行で締める
+
+**「[ここに会社の存在理由を一行で]」**</pre>
+        </div>
+      </section>
+
+      <!-- 第5章 -->
+      <section id="ch5">
+        <h2>第5章：作った .MD をClaudeに渡す方法</h2>
+
+        <h3>方法A：Chatにコピペ（一番カンタン）</h3>
+        <ol>
+          <li>.mdファイルをテキストエディット／メモ帳で開く</li>
+          <li>全選択（Cmd+A ／ Ctrl+A）→ コピー（Cmd+C ／ Ctrl+C）</li>
+          <li>Claudeに貼り付け（Cmd+V ／ Ctrl+V）</li>
+          <li>「これを参考に、◯◯を作って」と頼む</li>
+        </ol>
+
+        <h3>方法B：Coworkで読みに行ってもらう</h3>
+        <ol>
+          <li>.mdファイルを共有フォルダに保存</li>
+          <li>Claudeに「Desktop/company-no.md を読んで、◯◯を作って」と頼む</li>
+          <li>Claudeが自分で読みに行く</li>
+        </ol>
+
+        <h3>方法C：Claude Codeで使う</h3>
+        <p>ターミナルから <code>claude</code> と打って起動した状態で、</p>
+        <div class="tpl-card">
+          <button class="copy-btn" data-target="cc-cmd">コピー</button>
+          <pre id="cc-cmd">@company-no.md を踏まえて、社内向けの企画書を書いて</pre>
+        </div>
+        <p>と打てば、Claudeが自動で.MDの内容を読んだ上で企画書を作ります。</p>
+      </section>
+
+      <!-- 第6章 -->
+      <section id="ch6">
+        <h2>第6章：FAQ ── よくつまずくポイント</h2>
+
+        <h3>Q1. 保存したけど、拡張子が <code>.md.txt</code> になっている</h3>
+        <p><strong>原因</strong>：Windowsの「拡張子を隠す」設定が有効になっている。</p>
+        <p><strong>解決</strong>：</p>
+        <ol>
+          <li>エクスプローラーを開いて、上の「表示」タブをクリック</li>
+          <li>「ファイル名拡張子」にチェックを入れる</li>
+          <li>ファイル名を <code>company-no.md</code> に直す</li>
+        </ol>
+
+        <h3>Q2. テキストエディットで開いたら、装飾が反映されない</h3>
+        <p><strong>原因</strong>：それで正常です。テキストエディットは、マークダウンの記号をそのまま表示します（<code>**太字**</code> はそのまま「**太字**」と見える）。</p>
+        <p><strong>解決</strong>：プレビューしたいときは VS Code、Obsidian、または Claudeに「これプレビューして」と頼んでください。</p>
+
+        <h3>Q3. Claudeに貼り付けたけど、反応が薄い</h3>
+        <p><strong>原因</strong>：内容を貼り付けただけで「何をしてほしいか」を指定していない可能性。</p>
+        <p><strong>解決</strong>：「これを参考に、来週の新商品の告知文を書いて」のように、<strong>具体的な依頼</strong> を1行添えてください。.MDは「参考資料」、依頼は別途必要です。</p>
+
+        <h3>Q4. 「やらないこと」が3つも思いつかない</h3>
+        <p><strong>原因</strong>：それで正常です。「やらないこと」を3つ書ける経営者はほとんどいません。</p>
+        <p><strong>解決</strong>：1つでもOK。1つ書いて、Claudeに「これに似た『やらないこと』を、私の業種の常識から3つ提案して」と頼むと、ヒントをくれます。それを見て「あ、これは違うな／これは確かに自分もやらない」を選んでいけば、3つ揃います。</p>
+
+        <h3>Q5. .MDを更新したら、Claudeに「更新したよ」と毎回言わないとダメ？</h3>
+        <p><strong>回答</strong>：Coworkで共有しているなら不要。Claudeは依頼が来るたびにファイルを読み直します。Chatにコピペした場合は、新しい内容を再度コピペしてください。</p>
+      </section>
+
+      <!-- 第7章 -->
+      <section id="ch7">
+        <h2>第7章：明日からの一歩（再掲）</h2>
+        <p>勉強会の最後にお伝えした、全員共通の宿題です。</p>
+        <blockquote>
+          <p><strong>寝る前に、Claudeにこれだけ聞いてください。</strong></p>
+          <p style="font-size: 17px; color: #1a1a1a;"><strong>「私の事業で、明日1個だけ変えるとしたら何？」</strong></p>
+        </blockquote>
+        <p>返ってきた答えを、明日、本当に1個だけやってみる。</p>
+        <p>このガイドで .MD を1個作って、その内容をClaudeに渡してから上の質問を投げると、<strong>あなたの事業に寄せた答え</strong> が返ってきます。</p>
+      </section>
+
+      <!-- CTA -->
+      <div class="cta">
+        <h2>「やってみた」報告、お待ちしています</h2>
+        <p>動かなかった相談、もう一度話したい、なんでも気軽にお送りください。</p>
+        <div class="cta-buttons">
+          <a href="mailto:bookenn510@gmail.com?subject=【.MD やってみた報告】" class="cta-btn">メールで送る</a>
+          <a href="https://fukuoka-connect.github.io/" class="cta-btn secondary" target="_blank" rel="noopener">Fukuoka connect</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="quote">「初期値は、愛。」</div>
+      <p>このガイドが、あなたの「明日1個だけ」のスタート地点になりますように。</p>
+      <p style="margin-top: 16px;">
+        <strong style="color: #555;">後藤 堅太郎</strong> ／ Fukuoka connect<br>
+        <a href="mailto:bookenn510@gmail.com">bookenn510@gmail.com</a>
+      </p>
+      <p style="margin-top: 18px; font-size: 11px; color: #aaa;">claude勉強会 2026-05-28 大名CONNECT ／ 御礼特典 v1<br>このページは参加者限定の非公開ページです（noindex）。</p>
+    </div>
+  </footer>
+
+  <script>
+    // Copy button functionality
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const targetId = btn.getAttribute('data-target');
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        try {
+          await navigator.clipboard.writeText(target.textContent);
+          const originalText = btn.textContent;
+          btn.textContent = 'コピー済み';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.classList.remove('copied');
+          }, 1800);
+        } catch (e) {
+          // Fallback: select text
+          const range = document.createRange();
+          range.selectNode(target);
+          window.getSelection().removeAllRanges();
+          window.getSelection().addRange(range);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
