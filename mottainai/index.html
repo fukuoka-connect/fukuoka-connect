@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>もったいない診断｜FUKUOKA CONNECT</title>
+  <meta name="description" content="福岡の小さな商売に眠る、まだ届いていない魅力と改善の一歩を5問・約90秒で見つける無料診断です。">
+  <link rel="canonical" href="https://fukuoka-connect.github.io/mottainai/">
+  <meta property="og:title" content="もったいない診断｜FUKUOKA CONNECT">
+  <meta property="og:description" content="福岡の小さな商売に眠る伸びしろを、5問・約90秒で見つけます。登録不要・売り込みなし。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fukuoka-connect.github.io/mottainai/">
+  <meta property="og:image" content="https://fukuoka-connect.github.io/mottainai/og.png">
+  <meta property="og:image:width" content="1732">
+  <meta property="og:image:height" content="908">
+  <meta property="og:image:alt" content="もったいないを、もっとに変える。90秒の無料診断">
+  <meta property="og:site_name" content="FUKUOKA CONNECT">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="もったいない診断｜FUKUOKA CONNECT">
+  <meta name="twitter:description" content="福岡の小さな商売に眠る伸びしろを、5問・約90秒で見つけます。">
+  <meta name="twitter:image" content="https://fukuoka-connect.github.io/mottainai/og.png">
+  <link rel="icon" type="image/png" href="../images/fc-icon.png">
+  <link rel="apple-touch-icon" href="../images/fc-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHFD36S7BK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GHFD36S7BK');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"もったいない診断",
+    "url":"https://fukuoka-connect.github.io/mottainai/",
+    "description":"福岡の小さな商売に眠る伸びしろを5問で見つける無料セルフ診断。",
+    "applicationCategory":"BusinessApplication",
+    "operatingSystem":"Web",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},
+    "provider":{"@type":"Organization","name":"FUKUOKA CONNECT","url":"https://fukuoka-connect.github.io/"}
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    :root{
+      --ink:#1c1c1a;--paper:#f7f3e9;--cream:#fffdf7;--red:#e74b35;
+      --red-dark:#b42d21;--yellow:#f2cb4b;--green:#315c4c;
+      --line:#cfc9bc;--muted:#68645c;--blue:#276ef1;
+      --on:.22s;--off:.48s;--ease:cubic-bezier(.25,.46,.45,.94)
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;-webkit-font-smoothing:antialiased}
+    body,button,a,summary{font:inherit}
+    a{color:inherit}
+    button{color:inherit}
+    .sm{font-size:.78em}
+    .skip-link{position:fixed;top:8px;left:8px;z-index:1000;padding:10px 14px;background:var(--ink);color:#fff;transform:translateY(-160%)}
+    .skip-link:focus{transform:translateY(0)}
+    .site-header{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:76px;padding:0 4vw;border-bottom:1px solid var(--ink);background:rgba(247,243,233,.96);backdrop-filter:blur(12px)}
+    .brand{display:inline-flex;align-items:center;gap:12px;width:fit-content;font-size:12px;font-weight:900;letter-spacing:.12em;text-decoration:none}
+    .brand-mark{display:grid;width:38px;height:38px;place-items:center;border-radius:50%;background:var(--ink);color:#fff;letter-spacing:0}
+    .site-header nav{display:flex;gap:28px}
+    .site-header nav a{font-size:12px;font-weight:800;text-decoration:none}
+    .header-cta{justify-self:end;padding:11px 18px;border:1px solid var(--ink);border-radius:999px;font-size:12px;font-weight:900;text-decoration:none;transition:background var(--on) var(--ease),color var(--on) var(--ease)}
+    .header-cta:hover{background:var(--ink);color:#fff;transition-duration:var(--off)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(430px,.95fr);gap:clamp(40px,6vw,96px);align-items:center;min-height:calc(100vh - 76px);padding:clamp(70px,8vw,120px) 6vw;overflow:hidden;background-image:radial-gradient(circle at 7px 7px,rgba(28,28,26,.1) 1.4px,transparent 1.4px);background-size:22px 22px}
+    .hero-copy{position:relative;z-index:1}
+    .eyebrow,.card-kicker{margin:0 0 18px;color:var(--red);font-size:11px;font-weight:900;letter-spacing:.16em}
+    h1,h2,h3{font-family:'Shippori Mincho','Yu Mincho',serif}
+    h1{max-width:760px;margin:0;font-size:clamp(50px,7.1vw,104px);font-weight:800;letter-spacing:-.075em;line-height:.98}
+    h1 .accent{position:relative;display:inline-block;color:var(--red)}
+    h1 .accent::after{position:absolute;right:-12px;bottom:-7px;left:-8px;z-index:-1;height:12px;border-radius:50%;background:var(--yellow);content:''}
+    .hero-lead{margin:32px 0 0;font-size:clamp(16px,1.45vw,20px);font-weight:600;line-height:1.9}
+    .hero-actions,.result-actions,.final-cta-actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:34px}
+    .primary-button{display:inline-flex;gap:30px;align-items:center;justify-content:space-between;min-width:270px;padding:18px 22px;border:2px solid var(--ink);border-radius:9px;box-shadow:5px 5px 0 var(--ink);background:var(--yellow);font-weight:900;text-decoration:none;cursor:pointer;transition:transform var(--on) var(--ease),box-shadow var(--on) var(--ease)}
+    .primary-button:hover{box-shadow:2px 2px 0 var(--ink);transform:translate(3px,3px);transition-duration:var(--off)}
+    .no-sales{font-size:12px;font-weight:700}
+    .diagnosis-card{position:relative;scroll-margin-top:100px;min-height:585px;padding:clamp(28px,3.5vw,48px);border:2px solid var(--ink);border-radius:24px;box-shadow:14px 14px 0 var(--ink);background:var(--cream)}
+    .diagnosis-topline{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+    .diagnosis-topline span{display:grid;width:60px;height:60px;place-items:center;border-radius:50%;background:var(--red);color:#fff;font-weight:900;transform:rotate(-8deg)}
+    .diagnosis-topline p{margin:0;font-size:12px;font-weight:800}
+    .progress-track{height:5px;margin-bottom:30px;overflow:hidden;border-radius:10px;background:#e5e0d5}
+    .progress-track i{display:block;height:100%;border-radius:inherit;background:var(--red);transition:width .25s ease}
+    .diagnosis-card h2{max-width:450px;margin:0 0 10px;font-size:clamp(28px,2.8vw,40px);letter-spacing:-.045em;line-height:1.22}
+    .question-hint{margin:0 0 22px;color:var(--muted);font-size:13px}
+    .answer-list{display:grid;gap:9px}
+    .answer-list button{width:100%;padding:16px 17px;border:1px solid var(--ink);border-radius:10px;background:#fff;font-weight:800;line-height:1.4;text-align:left;cursor:pointer;transition:background var(--on) var(--ease),transform var(--on) var(--ease)}
+    .answer-list button::after{float:right;content:'→'}
+    .answer-list button:hover{background:var(--yellow);transform:translateX(3px);transition-duration:var(--off)}
+    .answer-list button:disabled{cursor:wait;opacity:.72}
+    .card-note,.result-disclaimer{margin:18px 0 0;color:var(--muted);font-size:11px;line-height:1.6}
+    .result-head{display:flex;gap:20px;align-items:flex-start;justify-content:space-between}
+    .result-label{margin:0 0 4px;font-size:12px;font-weight:800}
+    .result-head h2{font-size:clamp(28px,3vw,42px)}
+    .score-ring{display:grid;flex:0 0 96px;width:96px;height:96px;place-content:center;border:8px solid var(--yellow);border-radius:50%;background:var(--ink);color:#fff;text-align:center}
+    .score-ring strong{display:block;font-size:30px;line-height:1}
+    .score-ring span{font-size:10px}
+    .result-summary{margin:20px 0;font-size:13px;line-height:1.75}
+    .result-tasks{padding:18px 20px;border:1px solid var(--ink);border-radius:12px;background:#f6efd9}
+    .result-tasks p{margin:0 0 10px;font-size:12px;font-weight:900}
+    .result-tasks ol{display:grid;gap:7px;margin:0;padding-left:25px;font-size:12px;font-weight:700;line-height:1.5}
+    .result-panel blockquote{margin:16px 0;padding:14px 16px;border-left:5px solid var(--red);background:#fff;font-size:12px;font-weight:700;line-height:1.65}
+    .result-panel blockquote p{margin:0 0 4px;color:var(--red);font-size:10px;letter-spacing:.08em}
+    .result-offer{display:flex;gap:20px;align-items:end;justify-content:space-between;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .result-offer div{display:grid;gap:3px}
+    .result-offer span{font-size:10px}
+    .result-offer strong{font-size:13px}
+    .result-offer b{color:var(--red);font-size:18px;white-space:nowrap}
+    .result-actions{margin-top:18px}
+    .result-actions .primary-button{min-width:0;padding:14px 16px;font-size:12px}
+    .text-button{border:0;background:transparent;font-size:11px;font-weight:800;text-decoration:underline;cursor:pointer}
+    .promise-strip{display:grid;grid-template-columns:repeat(3,1fr);min-height:80px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--ink);color:#fff}
+    .promise-strip p{display:flex;gap:10px;align-items:center;justify-content:center;margin:0;border-right:1px solid #666}
+    .promise-strip p:last-child{border-right:0}
+    .promise-strip strong{color:var(--yellow);font-size:18px}
+    .promise-strip span{font-size:12px;font-weight:700}
+    .section{padding:clamp(82px,10vw,148px) 7vw}
+    .section-heading{display:grid;grid-template-columns:1.1fr .9fr;column-gap:7vw;align-items:end;margin-bottom:54px}
+    .section-heading .eyebrow{grid-column:1/-1}
+    .section-heading h2,.method-copy h2,.founder-section h2,.final-cta h2{margin:0;font-size:clamp(40px,5.5vw,78px);letter-spacing:-.065em;line-height:1.04}
+    .section-heading>p:last-child,.method-copy>p,.founder-copy>p{margin:0;font-size:15px;font-weight:600;line-height:1.9}
+    .compact-heading{display:block;max-width:820px}
+    .compact-heading h2{margin-bottom:20px}
+    .problem-section{background:var(--cream)}
+    .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ink);border-right:0}
+    .problem-grid article{min-height:300px;padding:34px;border-right:1px solid var(--ink)}
+    .problem-grid article>span{color:var(--red);font-size:12px;font-weight:900}
+    .problem-grid h3{margin:42px 0 18px;font-size:32px;letter-spacing:-.04em}
+    .problem-grid p{min-height:84px;font-size:13px;line-height:1.75}
+    .problem-grid b{font-size:12px}
+    .method-section{display:grid;grid-template-columns:.9fr 1.1fr;gap:10vw;align-items:center;background:var(--green);color:#fff}
+    .method-copy .eyebrow{color:var(--yellow)}
+    .method-copy h2{margin-bottom:28px}
+    .method-copy>p{color:#e9eee9}
+    .inline-link{display:inline-block;margin-top:28px;color:var(--yellow);font-size:13px;font-weight:900}
+    .method-steps{display:grid;border-top:1px solid rgba(255,255,255,.55)}
+    .method-steps div{display:grid;grid-template-columns:48px 1fr;gap:4px 18px;align-items:center;padding:28px 0;border-bottom:1px solid rgba(255,255,255,.55)}
+    .method-steps strong{grid-row:1/3;color:var(--yellow);font-size:24px}
+    .method-steps span{font-size:18px;font-weight:900}
+    .method-steps small{color:#d7ded9}
+    .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .case-card{overflow:hidden;border:1px solid var(--ink);border-radius:16px;background:var(--cream);text-decoration:none;transition:transform var(--on) var(--ease),box-shadow var(--on) var(--ease)}
+    .case-card:hover{box-shadow:7px 7px 0 var(--ink);transform:translate(-3px,-3px);transition-duration:var(--off)}
+    .case-art{position:relative;display:grid;height:230px;place-items:center;overflow:hidden}
+    .case-art::before,.case-art::after{position:absolute;border:2px solid currentColor;border-radius:50%;content:'';opacity:.25}
+    .case-art::before{width:260px;height:260px}.case-art::after{width:150px;height:150px}
+    .case-art span{z-index:1;font-family:'Shippori Mincho',serif;font-size:92px;font-weight:800;line-height:1}
+    .case-art em{position:absolute;right:18px;bottom:15px;font-size:10px;font-style:normal;font-weight:900;letter-spacing:.14em}
+    .case-red .case-art{background:var(--red);color:#fff4e3}.case-green .case-art{background:var(--green);color:var(--yellow)}.case-yellow .case-art{background:var(--yellow);color:var(--ink)}
+    .case-body{padding:26px}.case-body small{color:var(--red);font-weight:900;letter-spacing:.1em}.case-body h3{margin:12px 0;font-size:26px}.case-body p{min-height:82px;margin:0 0 20px;font-size:13px;line-height:1.75}.case-body b{font-size:12px}
+    .plans-section{background:var(--cream)}
+    .plan-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+    .plan-grid article{position:relative;display:flex;min-height:400px;flex-direction:column;padding:30px 26px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+    .plan-grid article>p{margin:0;color:var(--red);font-size:10px;font-weight:900;letter-spacing:.14em}.plan-grid h3{margin:24px 0 10px;font-size:22px}.plan-grid strong{font-size:30px;letter-spacing:-.04em}.plan-grid ul{display:grid;gap:10px;margin:30px 0;padding-left:19px;font-size:12px;line-height:1.5}.plan-grid a{margin-top:auto;padding:13px;border:1px solid var(--ink);border-radius:6px;font-size:12px;font-weight:900;text-align:center;text-decoration:none;transition:background var(--on) var(--ease),color var(--on) var(--ease)}.plan-grid a:hover{background:var(--ink);color:#fff;transition-duration:var(--off)}
+    .featured-plan{background:var(--yellow)}.featured-plan::after{position:absolute;top:-14px;right:18px;padding:7px 10px;border-radius:4px;background:var(--red);color:#fff;content:'まずはここから';font-size:10px;font-weight:900;transform:rotate(2deg)}
+    .plan-note{margin:24px 0 0;color:var(--muted);font-size:11px;line-height:1.7}
+    .founder-section{display:grid;grid-template-columns:.7fr 1.3fr;gap:9vw;align-items:center;padding:clamp(90px,11vw,160px) 11vw;background:var(--red);color:#fff}
+    .founder-section .eyebrow{color:var(--yellow)}.founder-section h2{margin-bottom:34px}.founder-copy>p{margin-bottom:20px}
+    .founder-stamp{position:relative;display:grid;aspect-ratio:1;place-items:center;border:3px solid #fff;border-radius:50%;box-shadow:0 0 0 18px rgba(255,255,255,.1);transform:rotate(-6deg)}
+    .founder-stamp span{font-family:'Shippori Mincho',serif;font-size:clamp(90px,13vw,190px);font-weight:800;line-height:1}.founder-stamp small{position:absolute;bottom:15%;font-size:10px;font-weight:900;letter-spacing:.14em;text-align:center}
+    .founder-section blockquote{margin:38px 0 24px;font-family:'Shippori Mincho',serif;font-size:clamp(28px,4vw,56px);font-weight:800;letter-spacing:-.04em}.signature{font-size:12px!important;font-weight:900!important;letter-spacing:.08em}
+    .faq-list{max-width:920px;margin-left:auto}.faq-list details{border-top:1px solid var(--ink)}.faq-list details:last-child{border-bottom:1px solid var(--ink)}.faq-list summary{position:relative;padding:25px 45px 25px 0;font-size:16px;font-weight:900;cursor:pointer;list-style:none}.faq-list summary::-webkit-details-marker{display:none}.faq-list summary::after{position:absolute;top:24px;right:4px;content:'+';font-size:22px}.faq-list details[open] summary::after{content:'−'}.faq-list details p{margin:0;padding:0 60px 26px 0;color:var(--muted);font-size:13px;line-height:1.8}
+    .final-cta{padding:clamp(85px,11vw,160px) 8vw;background:var(--yellow);text-align:center}.final-cta .eyebrow{color:var(--red-dark)}.final-cta-actions{justify-content:center}.final-cta .primary-button{background:var(--cream)}.secondary-button{padding:18px 24px;border:1px solid var(--ink);border-radius:999px;font-size:12px;font-weight:900;text-decoration:none}
+    footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:38px 5vw;background:var(--ink);color:#fff}footer p{margin:0;font-size:12px;font-weight:900}footer small{justify-self:end;color:#aaa;font-size:10px}
+    .primary-button:focus-visible,.answer-list button:focus-visible,a:focus-visible,summary:focus-visible,.text-button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+    @media(max-width:1050px){.hero{grid-template-columns:1fr}.hero-copy{max-width:820px}.diagnosis-card{max-width:720px;min-height:0}.plan-grid{grid-template-columns:repeat(2,1fr)}.case-grid{grid-template-columns:1fr 1fr}.case-grid .case-card:last-child{grid-column:1/-1}}
+    @media(max-width:800px){.site-header{grid-template-columns:1fr auto}.site-header nav{display:none}.section-heading,.method-section,.founder-section{grid-template-columns:1fr}.section-heading>p:last-child{margin-top:22px}.problem-grid{grid-template-columns:1fr;border-bottom:0}.problem-grid article{min-height:0;border-bottom:1px solid var(--ink)}.problem-grid p{min-height:0}.method-copy{margin-bottom:30px}.founder-stamp{width:min(380px,78vw);margin:0 auto 40px}footer{grid-template-columns:1fr;text-align:left}footer small{justify-self:start}}
+    @media(max-width:620px){.site-header{min-height:66px;padding:0 18px}.brand{font-size:9px}.brand-mark{width:32px;height:32px}.header-cta{padding:9px 12px;font-size:10px}.hero{min-height:auto;padding:54px 18px 70px}h1{font-size:48px}.hero-lead br{display:none}.primary-button{width:100%;min-width:0}.diagnosis-card{padding:24px 20px;border-radius:18px;box-shadow:8px 8px 0 var(--ink)}.result-head{display:block}.score-ring{width:80px;height:80px;margin:16px 0 0}.result-offer{align-items:flex-start;flex-direction:column}.promise-strip{grid-template-columns:1fr}.promise-strip p{min-height:64px;border-right:0;border-bottom:1px solid #555}.section{padding:78px 20px}.section-heading h2,.method-copy h2,.founder-section h2,.final-cta h2{font-size:42px}.case-grid,.plan-grid{grid-template-columns:1fr}.case-grid .case-card:last-child{grid-column:auto}.plan-grid article{min-height:340px}.founder-section{padding:84px 24px}.founder-section blockquote{font-size:34px}.faq-list{margin:0}.final-cta{padding:84px 20px}.secondary-button{width:100%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#diagnosis">診断へ移動する</a>
+  <header class="site-header">
+    <a class="brand" href="../" aria-label="FUKUOKA CONNECT トップへ戻る"><span class="brand-mark">FC</span><span>FUKUOKA CONNECT</span></a>
+    <nav aria-label="メインナビゲーション"><a href="#reason">診断について</a><a href="#cases">実例</a><a href="#plans">料金</a></nav>
+    <a class="header-cta" href="#diagnosis" data-cta="header_diagnosis">無料診断</a>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">FOR SMALL SHOPS IN FUKUOKA</p>
+        <h1>もったい<span class="sm">ない</span><span class="sm">を、</span><br><span class="accent">もっと</span><span class="sm">に</span>変える<span class="sm">。</span></h1>
+        <p class="hero-lead">あなたの店には、まだ届いていない魅力があります。<br>まずは90秒。いま眠っている「伸びしろ」を一緒に見つけませんか。</p>
+        <div class="hero-actions"><a class="primary-button" href="#diagnosis" data-cta="hero_diagnosis">90秒の無料診断へ <span aria-hidden="true">→</span></a><span class="no-sales">登録不要・売り込みなし</span></div>
+      </div>
+      <aside class="diagnosis-card" id="diagnosis" aria-label="もったいない診断">
+        <div id="diagnosisApp" aria-live="polite"></div>
+        <noscript><p>診断を利用するにはJavaScriptを有効にしてください。</p></noscript>
+      </aside>
+    </section>
+
+    <section class="promise-strip" aria-label="診断の特徴"><p><strong>90秒</strong><span>で完了</span></p><p><strong>3タイプ</strong><span>の伸びしろ</span></p><p><strong>店主目線</strong><span>で具体策を提案</span></p></section>
+
+    <section class="section problem-section" id="reason">
+      <div class="section-heading"><p class="eyebrow">THREE MOTTAINAI</p><h2>いい店<span class="sm">なのに、</span><br>届かないまま<span class="sm">にしない。</span></h2><p>問題は、魅力がないことではありません。届く途中のどこかで、少し止まっているだけです。</p></div>
+      <div class="problem-grid">
+        <article><span>01</span><h3>見つから<span class="sm">ない</span></h3><p>ホームページが古い。Google検索やマップで、必要な人に正しい情報が届いていない。</p><b>→ 魅力の未到達タイプ</b></article>
+        <article><span>02</span><h3>回ら<span class="sm">ない</span></h3><p>問い合わせ、予約、投稿づくり。経営者が同じ手作業を毎週抱え続けている。</p><b>→ 手作業の渋滞タイプ</b></article>
+        <article><span>03</span><h3>続か<span class="sm">ない</span></h3><p>一度来てくれたお客さんとの接点が消え、また思い出してもらう理由が残っていない。</p><b>→ 関係が続かないタイプ</b></article>
+      </div>
+    </section>
+
+    <section class="section method-section">
+      <div class="method-copy"><p class="eyebrow">NOT JUST A SCORE</p><h2>点数<span class="sm">だけで、</span><br>置いていか<span class="sm">ない。</span></h2><p>診断結果には、優先して直す3項目と「後藤からのひと言」を添えます。難しい用語より、明日何をすればいいかが分かることを大切にしています。</p><a class="inline-link" href="#diagnosis" data-cta="method_diagnosis">無料診断を試す →</a></div>
+      <div class="method-steps"><div><strong>01</strong><span>5つの質問に答える</span><small>個人情報は入力しません</small></div><div><strong>02</strong><span>伸びしろを確認する</span><small>タイプと簡易スコアを表示</small></div><div><strong>03</strong><span>最初の3つを決める</span><small>相談せず自分で直してもOK</small></div></div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="section-heading compact-heading"><p class="eyebrow">WORKS FROM THE FIELD</p><h2>現場<span class="sm">で</span>試したこと<span class="sm">だけ。</span></h2><p>自分の店と、福岡の小さなお店で、つくって、測って、直してきました。</p></div>
+      <div class="case-grid">
+        <a class="case-card case-red" href="../sofuren-umi/" target="_blank" rel="noopener"><div class="case-art"><span>焼</span><em>39 YEARS</em></div><div class="case-body"><small>RESTAURANT / UMI</small><h3>想夫恋 宇美店</h3><p>二代目として毎日店に立ちながら、公式サイト、SEO、LINE、店舗ゲームまで自店で実証。</p><b>実例を見る →</b></div></a>
+        <a class="case-card case-green" href="../pinon/" target="_blank" rel="noopener"><div class="case-art"><span>灯</span><em>DAIMYO</em></div><div class="case-body"><small>BAR / FUKUOKA</small><h3>PiNON Bar</h3><p>大名で16年続く隠れ家バーを、場所の分かりにくさごと魅力として伝わる物語へ。</p><b>実例を見る →</b></div></a>
+        <a class="case-card case-yellow" href="../game-service/" target="_blank" rel="noopener"><div class="case-art"><span>遊</span><em>PLAY &amp; RETURN</em></div><div class="case-body"><small>EXPERIENCE / PRODUCT</small><h3>店舗ミニゲーム</h3><p>待ち時間を、遊ぶ・クーポン・再来店の循環へ。店ごとのキャラクターと世界を制作。</p><b>サービスを見る →</b></div></a>
+      </div>
+    </section>
+
+    <section class="section plans-section" id="plans">
+      <div class="section-heading compact-heading"><p class="eyebrow">SMALL FIRST STEP</p><h2>いきなり<span class="sm">、</span>作り直しま<span class="sm">せん。</span></h2><p>健康診断と同じように、まず現状を知る。必要な分だけ、小さく始められます。</p></div>
+      <div class="plan-grid">
+        <article><p>SELF CHECK</p><h3>無料セルフ診断</h3><strong>0円</strong><ul><li>5問・約90秒</li><li>結果はその場で表示</li><li>登録・営業なし</li></ul><a href="#diagnosis" data-cta="plan_selfcheck">今すぐ診断する</a></article>
+        <article class="featured-plan"><p>STANDARD</p><h3>スタンダード診断</h3><strong>5,500円</strong><ul><li>10項目を人の目で確認</li><li>改善レポートを納品</li><li>優先順位を整理</li></ul><a href="https://docs.google.com/forms/d/e/1FAIpQLSfkxMga9FQyM55r__FXsOk4HN5A8_azqJfCRMMx-gbo0mea9g/viewform" target="_blank" rel="noopener" data-cta="plan_standard">診断を相談する</a></article>
+        <article><p>PRO</p><h3>プロ診断</h3><strong>22,000円</strong><ul><li>競合・地域検索も確認</li><li>具体的な処方箋</li><li>オンライン説明付き</li></ul><a href="https://docs.google.com/forms/d/e/1FAIpQLSfkxMga9FQyM55r__FXsOk4HN5A8_azqJfCRMMx-gbo0mea9g/viewform" target="_blank" rel="noopener" data-cta="plan_pro">詳しく相談する</a></article>
+        <article><p>IMPLEMENT</p><h3>改善実装</h3><strong>55,000円〜</strong><ul><li>今あるページを活用</li><li>必要な部分だけ修正</li><li>制作前に見積もり</li></ul><a href="https://docs.google.com/forms/d/e/1FAIpQLSfkxMga9FQyM55r__FXsOk4HN5A8_azqJfCRMMx-gbo0mea9g/viewform" target="_blank" rel="noopener" data-cta="plan_implementation">改善を相談する</a></article>
+      </div>
+      <p class="plan-note">新規制作・AI業務自動化は内容に応じてお見積もりします。診断結果に不要なものは提案しません。</p>
+    </section>
+
+    <section class="founder-section">
+      <div class="founder-stamp" aria-hidden="true"><span>店</span><small>OWNER<br>&amp; CREATOR</small></div>
+      <div class="founder-copy"><p class="eyebrow">FROM THE KITCHEN</p><h2>厨房<span class="sm">から来た、</span><br>ウェブ屋<span class="sm">です。</span></h2><p>僕自身、福岡県宇美町で39年続く焼きそば店の二代目をしています。店が忙しくて、発信まで手が回らない。業者に何を頼めばいいか分からない。その感覚を、机の上ではなく毎日の現場で知っています。</p><p>あなたの店、あなたのサービス、そしてあなた自身にも、まだ届けきれていない価値がある。僕は町を歩きながら、いつも思います。</p><blockquote>——もったいないなぁ。</blockquote><p class="signature">FUKUOKA CONNECT　後藤 堅太郎</p></div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="section-heading compact-heading"><p class="eyebrow">FAQ</p><h2>よくある質問</h2></div>
+      <div class="faq-list">
+        <details><summary>無料診断をすると営業されますか？</summary><p>診断は登録不要で、結果もその場で表示します。相談ボタンを押さない限り、こちらに情報は届きません。</p></details>
+        <details><summary>ホームページがなくても相談できますか？</summary><p>はい。Googleマップ、SNS、LINEなど、今ある入口を見ながら優先順位を整理できます。</p></details>
+        <details><summary>診断したら作り直す必要がありますか？</summary><p>ありません。今あるページを活かせるなら、その方が良いと考えています。必要な部分だけ直すご提案も可能です。</p></details>
+        <details><summary>福岡県外でも依頼できますか？</summary><p>オンラインで対応可能です。ただし、地域の現場感を大切にするため、まずは福岡・糟屋エリアを優先しています。</p></details>
+      </div>
+    </section>
+
+    <section class="final-cta"><p class="eyebrow">LET'S FIND YOUR “MORE”</p><h2>まだ届いてい<span class="sm">ない</span>魅力<span class="sm">を、</span><br>一緒<span class="sm">に</span>見つけま<span class="sm">せんか。</span></h2><div class="final-cta-actions"><a class="primary-button" href="#diagnosis" data-cta="footer_diagnosis">まずは無料診断へ <span aria-hidden="true">→</span></a><a class="secondary-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfkxMga9FQyM55r__FXsOk4HN5A8_azqJfCRMMx-gbo0mea9g/viewform" target="_blank" rel="noopener" data-cta="footer_contact">直接相談する</a></div></section>
+  </main>
+
+  <footer><a class="brand" href="../"><span class="brand-mark">FC</span><span>FUKUOKA CONNECT</span></a><p>もったいないを、もっとに変える。</p><small>© 2026 FUKUOKA CONNECT / 福岡県糟屋郡宇美町</small></footer>
+
+  <script>
+  (function(){
+    'use strict';
+    const contactUrl='https://docs.google.com/forms/d/e/1FAIpQLSfkxMga9FQyM55r__FXsOk4HN5A8_azqJfCRMMx-gbo0mea9g/viewform';
+    const questions=[
+      {title:'今、いちばん気になることは？',hint:'直感に近いものを選んでください。',options:[
+        {label:'ホームページが活かせていない',scores:{web:3,ops:0,repeat:0},urgency:3},
+        {label:'同じ手作業に時間を取られている',scores:{web:0,ops:3,repeat:0},urgency:3},
+        {label:'一度来たお客さんが続かない',scores:{web:0,ops:0,repeat:3},urgency:2},
+        {label:'何から手をつけるべきか分からない',scores:{web:1,ops:1,repeat:1},urgency:2}
+      ]},
+      {title:'お客さんが最初に見る場所は？',hint:'いちばん多い入口を選んでください。',options:[
+        {label:'Google検索・Googleマップ',scores:{web:2,ops:0,repeat:1},urgency:2},
+        {label:'InstagramなどのSNS',scores:{web:1,ops:0,repeat:2},urgency:2},
+        {label:'紹介・口コミがほとんど',scores:{web:2,ops:0,repeat:1},urgency:3},
+        {label:'把握できていない',scores:{web:1,ops:1,repeat:1},urgency:3}
+      ]},
+      {title:'毎週、負担になっている作業は？',hint:'複数ある場合は、いちばん時間がかかるものを。',options:[
+        {label:'SNS投稿やホームページ更新',scores:{web:1,ops:2,repeat:0},urgency:2},
+        {label:'問い合わせ・予約・日程調整',scores:{web:0,ops:3,repeat:0},urgency:3},
+        {label:'口コミ返信や再来店の案内',scores:{web:0,ops:1,repeat:2},urgency:2},
+        {label:'特にない・まだ分からない',scores:{web:1,ops:0,repeat:1},urgency:1}
+      ]},
+      {title:'今あるWeb情報は、現状と合っていますか？',hint:'営業時間・料金・写真・サービス内容を思い浮かべてください。',options:[
+        {label:'かなり古いまま',scores:{web:3,ops:0,repeat:0},urgency:3},
+        {label:'一部だけ直したい',scores:{web:2,ops:0,repeat:0},urgency:2},
+        {label:'情報は合っているが反応が少ない',scores:{web:1,ops:0,repeat:2},urgency:2},
+        {label:'だいたい問題ない',scores:{web:0,ops:1,repeat:1},urgency:1}
+      ]},
+      {title:'半年後、いちばん変えたいことは？',hint:'売上の前に、起こしたい変化を選んでください。',options:[
+        {label:'新しいお客さんに見つけてもらう',scores:{web:3,ops:0,repeat:0},urgency:2},
+        {label:'自分やスタッフの時間を取り戻す',scores:{web:0,ops:3,repeat:0},urgency:3},
+        {label:'また来たくなる理由をつくる',scores:{web:0,ops:0,repeat:3},urgency:2},
+        {label:'相談相手と優先順位を決める',scores:{web:1,ops:1,repeat:1},urgency:2}
+      ]}
+    ];
+    const results={
+      web:{title:'魅力の未到達タイプ',summary:'お店の中身ではなく、Web上の入口と伝え方に改善余地があります。全面リニューアルの前に、いまある情報の鮮度と問い合わせまでの道筋を整えるのが先です。',tasks:['営業時間・料金・写真を現状と揃える','スマホで問い合わせまで迷わず進めるか確認する','地域名×サービス名で必要なページを1つ整える'],comment:'いい店なのに、入口だけで帰られているなら本当にもったいないです。まずは作り直す前に、今あるものを一緒に見せてください。',service:'LP人間ドック｜スタンダード診断',price:'5,500円'},
+      ops:{title:'手作業の渋滞タイプ',summary:'集客施策を増やす前に、問い合わせ整理や投稿作成などの繰り返し作業を軽くする余地があります。小さな作業を1つだけ自動化するところから始められます。',tasks:['毎週繰り返している作業を3つ書き出す','判断が不要な定型作業を1つ選ぶ','架空データで小さな自動化デモを試す'],comment:'忙しい人に新しい仕事を増やしても続きません。先に、毎週少しずつ奪われている時間を取り戻す方法を考えましょう。',service:'AI業務自動化｜小さな導入',price:'30,000円〜'},
+      repeat:{title:'関係が続かないタイプ',summary:'新規集客だけでなく、来店後に思い出してもらう仕掛けが必要です。LINE、クーポン、店内QR、遊べる体験など、お店に合う再訪理由を設計します。',tasks:['会計後に残る接点を1つ決める','次回来店の小さな理由をつくる','再訪につながった数を計測できる状態にする'],comment:'せっかく来てくれた一回を、一回で終わらせるのはもったいない。売り込みではなく、また思い出してもらえる楽しい接点をつくりたいです。',service:'店舗体験・ミニゲーム相談',price:'相談無料'}
+    };
+    const app=document.getElementById('diagnosisApp');
+    let step=0,scores={web:0,ops:0,repeat:0},urgency=0,started=false;
+    function track(name,params){if(typeof window.gtag==='function')window.gtag('event',name,params||{});}
+    function resultKey(){return Object.keys(scores).sort((a,b)=>scores[b]-scores[a])[0];}
+    function renderQuestion(){
+      const q=questions[step],progress=((step+1)/questions.length)*100;
+      app.innerHTML='<div class="diagnosis-inner"><div class="diagnosis-topline"><span>無料</span><p>質問 '+(step+1)+' / '+questions.length+'</p></div><div class="progress-track" aria-hidden="true"><i style="width:'+progress+'%"></i></div><p class="card-kicker">MOTTAINAI CHECK</p><h2 id="diagnosis-title">'+q.title+'</h2><p class="question-hint">'+q.hint+'</p><div class="answer-list" role="group" aria-labelledby="diagnosis-title">'+q.options.map((o,i)=>'<button type="button" data-option="'+i+'">'+o.label+'</button>').join('')+'</div><p class="card-note">回答内容は保存されません。個人情報の入力も不要です。</p></div>';
+      app.querySelectorAll('[data-option]').forEach(btn=>btn.addEventListener('click',()=>selectOption(Number(btn.dataset.option))));
+    }
+    function selectOption(index){
+      if(!started){started=true;track('diagnosis_start',{diagnosis_name:'mottainai_check'});}
+      const option=questions[step].options[index];
+      Object.keys(scores).forEach(k=>scores[k]+=option.scores[k]);urgency+=option.urgency;
+      track('diagnosis_answer',{question_number:step+1,answer_label:option.label});
+      step+=1;if(step>=questions.length)renderResult();else renderQuestion();
+    }
+    function renderResult(){
+      const key=resultKey(),r=results[key],score=Math.min(96,40+urgency*4);
+      app.innerHTML='<div class="result-panel"><div class="result-head"><div><p class="card-kicker">YOUR RESULT</p><p class="result-label">あなたの「もったいない」は</p><h2>'+r.title+'</h2></div><div class="score-ring" aria-label="もったいない度 '+score+'点"><strong>'+score+'</strong><span>/ 100</span></div></div><p class="result-summary">'+r.summary+'</p><div class="result-tasks"><p>まず、この3つから</p><ol>'+r.tasks.map(t=>'<li>'+t+'</li>').join('')+'</ol></div><blockquote><p>後藤からのひと言</p>「'+r.comment+'」</blockquote><div class="result-offer"><div><span>おすすめの次の一歩</span><strong>'+r.service+'</strong></div><b>'+r.price+'</b></div><div class="result-actions"><a class="primary-button" href="'+contactUrl+'" target="_blank" rel="noopener" data-cta="result_contact">結果について相談する <span aria-hidden="true">→</span></a><button class="text-button" type="button" id="resetDiagnosis">もう一度診断する</button></div><p class="result-disclaimer">この結果は5問による簡易診断です。契約や制作を勧めるものではありません。</p></div>';
+      track('diagnosis_complete',{result_type:key,mottainai_score:score});
+      app.querySelector('[data-cta]').addEventListener('click',()=>track('cta_click',{cta_name:'result_contact',result_type:key}));
+      document.getElementById('resetDiagnosis').addEventListener('click',reset);
+    }
+    function reset(){step=0;scores={web:0,ops:0,repeat:0};urgency=0;started=false;renderQuestion();app.focus({preventScroll:true});}
+    document.addEventListener('click',e=>{const c=e.target.closest('[data-cta]');if(c&&!c.closest('#diagnosisApp'))track('cta_click',{cta_name:c.dataset.cta});});
+    renderQuestion();
+  }());
+  </script>
+</body>
+</html>

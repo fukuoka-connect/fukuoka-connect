@@ -630,6 +630,29 @@
     }
     .drawer-overlay.open{display:block}
 
+    /* ──────────── 90秒の無料診断 ──────────── */
+    #mottainai-check{background:#f2cb4b;color:var(--tx)}
+    #mottainai-check .slabel{color:rgba(44,31,14,.6)}
+    #mottainai-check .slabel::before{background:rgba(44,31,14,.35)}
+    .mcheck-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(44px,8vw,110px);align-items:center}
+    .mcheck-copy .sh2{margin-bottom:24px}
+    .mcheck-copy>p{max-width:610px;font-size:1rem;line-height:1.95;margin-bottom:30px}
+    .mcheck-copy .btnp{background:var(--navy);color:var(--cr2)}
+    .mcheck-copy .btnp:hover{background:var(--cr2);color:var(--navy)}
+    .mcheck-panel{border:2px solid var(--navy);background:var(--cr2);box-shadow:12px 12px 0 var(--navy);padding:34px}
+    .mcheck-panel-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:20px;border-bottom:1px solid var(--cr4)}
+    .mcheck-panel-top strong{font-family:'Shippori Mincho',serif;font-size:3.6rem;line-height:1;color:var(--navy)}
+    .mcheck-panel-top span{font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--mu)}
+    .mcheck-list{list-style:none;display:grid;gap:0;margin-top:14px}
+    .mcheck-list li{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:center;padding:15px 0;border-bottom:1px solid var(--cr4);font-weight:700}
+    .mcheck-list b{display:grid;width:30px;height:30px;place-items:center;border-radius:50%;background:var(--navy);color:var(--cr2);font-size:.72rem}
+    .mcheck-note{margin-top:18px;color:var(--mu);font-size:.75rem;line-height:1.7}
+
+    @media(max-width:1100px) and (min-width:961px){
+      header{padding:0 26px}
+      nav{gap:18px}
+    }
+
     /* ──────────── RESPONSIVE ──────────── */
     @media(max-width:960px){
       header{padding:0 20px}nav{display:none}.hcta{display:none}
@@ -641,6 +664,7 @@
       .owl{grid-template-columns:1fr;gap:40px}
       .flw{grid-template-columns:1fr 1fr}.fls::after{display:none}
       .wgrid{grid-template-columns:repeat(2,1fr)}
+      .mcheck-wrap{grid-template-columns:1fr}
       footer{padding:40px 20px 24px}.fttop{flex-direction:column}
     }
     @media(max-width:600px){
@@ -685,6 +709,7 @@
     <a href="#solution">サービス</a>
     <a href="#works">実績</a>
     <a href="#strength">強み</a>
+    <a href="mottainai/">無料診断</a>
     <a href="#dock">LP人間ドック</a>
     <a href="about.html">運営者</a>
     <a href="#faq">FAQ</a>
@@ -698,6 +723,7 @@
   <a href="#solution" class="drawer-link">サービス</a>
   <a href="#works" class="drawer-link">実績</a>
   <a href="#strength" class="drawer-link">強み</a>
+  <a href="mottainai/" class="drawer-link">90秒の無料診断</a>
   <a href="#dock" class="drawer-link">LP人間ドック</a>
   <a href="about.html" class="drawer-link">運営者情報</a>
   <a href="#faq" class="drawer-link">FAQ</a>
@@ -723,7 +749,7 @@
     </div>
     <div class="hctas">
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkxMga9FQyM55r__FXsOk4HN5A8_azqJfCRMMx-gbo0mea9g/viewform" target="_blank" rel="noopener noreferrer" class="btnp"><span>▶ 一緒に、考えませんか？</span></a>
-      <a href="#message" class="btng">想いを読む →</a>
+      <a href="mottainai/" class="btng">90秒の無料診断 →</a>
     </div>
   </div>
 </section>
@@ -768,6 +794,27 @@
       <div class="pc reveal"><div class="pn">02</div><h3>SNS<span class="sm">は</span>やっている<span class="sm">のに</span><br>集客につながらない</h3><p>毎日投稿しているのに問い合わせが来ない。フォロワーは増えても売上に直結しない。</p></div>
       <div class="pc reveal"><div class="pn">03</div><h3>制作会社<span class="sm">に</span>頼んだら<br>高くて時間もかかる</h3><p>見積もりを取ったら数十万円。しかも完成まで1〜2ヶ月待たされる。今すぐ動きたいのに。</p></div>
       <div class="pc reveal"><div class="pn">04</div><h3>作ったけど<span class="sm">、</span><br>効果<span class="sm">が</span>わからない</h3><p>以前LPを作ったが、どれくらいの人が見ているのか、どこで離脱しているのかがわからないまま放置している。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MOTTAINAI CHECK -->
+<section id="mottainai-check">
+  <div class="si2 mcheck-wrap">
+    <div class="mcheck-copy reveal">
+      <span class="slabel">FREE CHECK</span>
+      <h2 class="sh2">あなた<span class="sm">の</span>店<span class="sm">の</span><br><span class="fuchi">もったいない</span><span class="sm">は、</span>どこ？</h2>
+      <p>ホームページ、毎週の手作業、リピーターづくり。5つの質問に答えると、いま優先して整えたい3項目と「後藤からのひと言」がその場で届きます。</p>
+      <a href="mottainai/" class="btnp"><span>▶ 90秒の無料診断を始める</span></a>
+    </div>
+    <div class="mcheck-panel reveal" aria-label="無料診断の特徴">
+      <div class="mcheck-panel-top"><strong>90<span class="sm">秒</span></strong><span>REGISTRATION FREE</span></div>
+      <ol class="mcheck-list">
+        <li><b>01</b><span>個人情報なしで5問に回答</span></li>
+        <li><b>02</b><span>点数と伸びしろタイプを表示</span></li>
+        <li><b>03</b><span>明日からできる優先3項目を提案</span></li>
+      </ol>
+      <p class="mcheck-note">登録不要・結果はその場で表示。相談ボタンを押さない限り、回答内容はこちらに送信されません。</p>
     </div>
   </div>
 </section>
@@ -1089,7 +1136,7 @@
         <p class="ftag">AIを活用して中小企業・個人事業主のビジネスを加速させる、LP制作・運用代行サービス。福岡・宇美町から全国へ。</p>
       </div>
       <div class="ftnav">
-        <div class="ftnc"><h4>SERVICE</h4><a href="#solution">サービス概要</a><a href="#services">料金プラン</a><a href="#flow">制作の流れ</a><a href="works.html">制作サンプル一覧</a><a href="https://fukuoka-connect.github.io/lp-dock/" target="_blank">LP人間ドック↗</a></div>
+        <div class="ftnc"><h4>SERVICE</h4><a href="#solution">サービス概要</a><a href="mottainai/">90秒の無料診断</a><a href="#services">料金プラン</a><a href="#flow">制作の流れ</a><a href="works.html">制作サンプル一覧</a><a href="https://fukuoka-connect.github.io/lp-dock/" target="_blank">LP人間ドック↗</a></div>
         <div class="ftnc"><h4>ABOUT</h4><a href="about.html">運営者情報</a><a href="#strength">選ばれる理由</a><a href="#testimonials">お客様の声</a></div>
         <div class="ftnc"><h4>CONTACT</h4><a href="#cta">無料相談フォーム</a><a href="#faq">よくある質問</a></div>
       </div>
@@ -1129,7 +1176,7 @@
   document.querySelectorAll('section[id]').forEach(s=>so.observe(s));
 
   // CTA CLICK
-  document.querySelectorAll('.btnm,.btnp,.hcta').forEach(b=>{b.addEventListener('click',()=>{if(typeof gtag!=='undefined')gtag('event','cta_click',{event_category:'conversion',event_label:b.textContent.trim().slice(0,40),event_location:b.closest('section')?.id||'header'});});});
+  document.querySelectorAll('.btnm,.btnp,.btng,.hcta').forEach(b=>{b.addEventListener('click',()=>{if(typeof gtag!=='undefined')gtag('event','cta_click',{event_category:'conversion',event_label:b.textContent.trim().slice(0,40),event_location:b.closest('section')?.id||'header'});});});
 
   // HAMBURGER MENU
   const hbtn=document.querySelector('.hbtn'),drawer=document.getElementById('drawer'),overlay=document.getElementById('drawerOverlay');
